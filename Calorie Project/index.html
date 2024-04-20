@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Font Awesome Links -->
+    
+    <title>Calories Projects</title>
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-wrapper blue">
+          <div class="container">
+            <a href="#" class="brand-logo center">Tracalorie</a>
+            <ul class="right">
+              <li><a href="#" class="clear-btn btn blue lighten-3">Clear All</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+      <br>
+    
+      <div class="container">
+        <!-- Form Card -->
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Add Meal / Food Item</span>
+            <form class="col">
+              <div class="row">
+                <div class="input-field col s6">
+                  <!-- <label for="item-name">Meal</label> -->
+                  <input type="text" placeholder="Add Item" id="item-name">
+                </div>
+                <div class="input-field col s6">
+                  <!-- <label for="item-calories">Calories</label> -->
+                    <input type="number" placeholder="Add Calories" id="item-calories">
+                </div>
+                <button class="add-btn btn blue darken-3"><i class="fa fa-plus"></i> Add Meal</button>
+                
+                <button class="update-btn btn orange"><i class="fa fa-pencil-square-o"></i> Update Meal</button>
+                <button class="delete-btn btn red"><i class="fa fa-remove"></i> Delete Meal</button>
+               
+                <button class="back-btn btn grey pull-right"><i class="fa fa-chevron-circle-left"></i> Back</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    
+        <!-- Calorie Count -->
+        <h3 class="center-align">Total Calories: <span class="total-calories">0</span></h3>
+    
+        <!-- Item List -->
+        <ul id="item-list" class="collection">
+          <!--
+          <li class="collection-item" id="item-0">
+            <strong>Rice and Stew: </strong> <em> 1300 Calories</em>
+            <a href="#" class="secondary-content">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </li>
+          <li class="collection-item" id="item-0">
+            <strong>: Bacon </strong> <em>600 Calories</em>
+            <a href="#" class="secondary-content">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </li>
+          <li class="collection-item" id="item-0">
+            <strong>Yam with Sauce: </strong> <em>800 Calories</em>
+            <a href="#" class="secondary-content">
+              <i class="edit-item fa fa-pencil"></i>
+            </a>
+          </li>
+          <li class="collection-item" id="item-0">
+            <strong>Chicken: </strong> <em> 1200 Calories</em>
+            <a href="#" class="secondary-content">
+              <i class=" edit-item fa fa-pencil"></i>
+            </a>
+          </li>
+          <li class="collection-item" id="item-0">
+            <strong>Pork: </strong> <em> 1800 Calories</em>
+            <a href="#" class="secondary-content">
+              <i class=" edit-item fa fa-pencil"></i>
+            </a>
+          </li>
+        -->
+        </ul>
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
