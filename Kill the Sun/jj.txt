@@ -1,0 +1,91 @@
+const questions = document.querySelector(".question")
+const AnswerBtn = document.getElementById("Answer-btn")
+const NextBtn = document.getElementById("Next-Btn")
+
+let currentQuestionIndex = 0
+let score = 0
+
+function startQuiz() {
+    currentQuestionIndex = 0
+    score = 0
+    NextBtn.innerHTML = "Next"
+    showQuestion()
+}
+
+function resetState() {
+    NextBtn.style.display = "none"
+    while(AnswerBtn.firstChild) {
+        AnswerBtn.removeChild(AnswerBtn.firstChild)
+    }
+}
+
+function showQuestion() {
+    resetState()
+    let currentQuestion = QUIZ[currentQuestionIndex]
+    let  currentno =  currentQuestionIndex + 1
+    questions.innerHTML = currentno + "." + currentQuestion.question
+
+    currentQuestion.option.forEach(ans => {
+        const button = document.createElement("button")
+        button.innerHTML = ans.text
+        button.classList.add("btn")
+        AnswerBtn.appendChild(button)
+        if(ans.correct) {
+            button.dataset.correct = ans.correct
+        }
+
+        button.addEventListener("click", selectAnswer)
+    })
+    
+    
+}
+
+ function selectAnswer (e){
+    const selectedBtn = e.target
+    const isCorrect = selectedBtn.dataset.correct === "true"
+    if(isCorrect) {
+        selectedBtn.classList.add("correct")
+        score++
+    } else {
+        selectedBtn.classList.add("incorrect")
+    }
+    Array.from(AnswerBtn.children).forEach(button=> {
+        if(button.dataset.correct === "true") {
+            button.classList.add("true")
+        }
+
+        button.disabled = true
+    })
+    NextBtn.style.display = "block"
+}
+
+NextBtn.addEventListener("click", ()=> {
+    if(currentQuestionIndex < QUIZ.length) {
+        // showQuestion()
+        callNextBtn()
+    } else {
+        // sharewithustheScore()
+        startQuiz()
+    }
+})
+
+function callNextBtn() {
+    currentQuestionIndex++
+    if(currentQuestionIndex < QUIZ.length) {
+        showQuestion()
+        // callNextBtn()
+    } else {
+        sharewithustheScore()
+        // startQuiz()
+    }
+}
+
+
+function sharewithustheScore() {
+    resetState()
+    questions.innerHTML = `You have scored ${score} out of ${QUIZ.length}`
+    NextBtn.innerHTML = "Restart Quiz"
+    NextBtn.style.display = "block"
+}
+
+startQuiz()
